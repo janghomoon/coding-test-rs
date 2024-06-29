@@ -4,47 +4,47 @@ import java.util.Scanner;
 
 public class GuardTheCastle {
   //성지키기
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int n = scanner.nextInt();
-    int m = scanner.nextInt();
-    char[][] map = new char[n][m];
-    for (int idx = 0; idx < n; idx++) {
-      map[idx] = scanner.next().toCharArray();
-    }
-    //각 행/열 에 대해 경비원이 있는지 확인
-    int existRowCount = 0;
-    for (int idx = 0; idx < n; idx++) {
-      boolean isExist = false;
-      for (int i = 0; i< m; i++) {
-        if (map[idx][i] == 'X') {
-          isExist = true;
-          break;
-        }
-      }
-      if (isExist) existRowCount++;
-    }
-
-    int existColCount = 0;
-    for (int idx =0; idx < m; idx++) {
-      boolean isExist = false;
-      for(int i = 0; i < n; i++ ) {
-        if (map[n][m] == 'X') {
-          isExist = true;
-          break;
-        }
-      }
-      if (isExist) existColCount++;
-    }
-
-    //보호받지 못한 행 열 개수 구함
-    int needRowCount = 0;
-    needRowCount = n - existRowCount;
-    int needColCount = 0;
-    needColCount = m - existColCount;
-    //둘중 큰 값 출력
-    System.out.println(Math.max(needRowCount, needColCount));
-  }
+//  public static void main(String[] args) {
+//    Scanner scanner = new Scanner(System.in);
+//    int n = scanner.nextInt();
+//    int m = scanner.nextInt();
+//    char[][] map = new char[n][m];
+//    for (int idx = 0; idx < n; idx++) {
+//      map[idx] = scanner.next().toCharArray();
+//    }
+//    //각 행/열 에 대해 경비원이 있는지 확인
+//    int existRowCount = 0;
+//    for (int idx = 0; idx < n; idx++) {
+//      boolean isExist = false;
+//      for (int i = 0; i< m; i++) {
+//        if (map[idx][i] == 'X') {
+//          isExist = true;
+//          break;
+//        }
+//      }
+//      if (isExist) existRowCount++;
+//    }
+//
+//    int existColCount = 0;
+//    for (int idx =0; idx < m; idx++) {
+//      boolean isExist = false;
+//      for(int i = 0; i < n; i++ ) {
+//        if (map[n][m] == 'X') {
+//          isExist = true;
+//          break;
+//        }
+//      }
+//      if (isExist) existColCount++;
+//    }
+//
+//    //보호받지 못한 행 열 개수 구함
+//    int needRowCount = 0;
+//    needRowCount = n - existRowCount;
+//    int needColCount = 0;
+//    needColCount = m - existColCount;
+//    //둘중 큰 값 출력
+//    System.out.println(Math.max(needRowCount, needColCount));
+//  }
 
   //
 //  public static void main(String[] args) {
@@ -86,7 +86,10 @@ public class GuardTheCastle {
 //    System.out.println(count);
 //  }
 
- public static void t() {
+//  public static void main(String[] args) {
+//
+//  }
+  public static void main(String[] args) {
    Scanner scanner = new Scanner(System.in);
    int n = scanner.nextInt();
    int m = scanner.nextInt();
