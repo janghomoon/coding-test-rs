@@ -57,35 +57,70 @@ public class SaltBomb {
 //    System.out.println(output);
 //  }
 
+
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     String nowTimeInput = scanner.next();
     String dropTimeInput = scanner.next();
     String[] nowTimeArr = nowTimeInput.split(":");
     String[] dropTimeArr = dropTimeInput.split(":");
+
+    //모두 초로 환산
     int nowHour = Integer.parseInt(nowTimeArr[0]);
     int nowMin = Integer.parseInt(nowTimeArr[1]);
     int nowSec = Integer.parseInt(nowTimeArr[2]);
-    int nowAmountSec = nowHour * 3600 + nowMin * 60 + nowSec;
+    int nowTotalSec = (nowHour*60*60) + (nowMin*60) + nowSec;
+
     int dropHour = Integer.parseInt(dropTimeArr[0]);
     int dropMin = Integer.parseInt(dropTimeArr[1]);
     int dropSec = Integer.parseInt(dropTimeArr[2]);
 
-    int dropAmountSec = dropHour * 3600 + dropMin * 60 + dropSec;
-    int compareAmountSec = dropAmountSec - nowAmountSec;
-    //어렵다
-    if (compareAmountSec <= 0) {
-      compareAmountSec += 24 * 3600;
-    }
+    int dropTotalSec = (dropHour*60*60) + (dropMin*60) + dropSec;// 하루 뒤 시간 계산시 맞지 않음
 
-    int outputHour = compareAmountSec / 3600;
-    int outputMin = (compareAmountSec % 3600) / 60;
-    int outputSec = compareAmountSec % 60;
+    int compareSec = dropTotalSec - nowTotalSec;
+    if (compareSec <= 0) compareSec += 24*3600;
 
-    //smart 출력 법
-    String output = String.format("%02d:%02d:%02d", outputHour, outputMin, outputSec);
-    System.out.println(output);
+    int hour = compareSec / 3600;
+    int min =  (compareSec % 3600)/ 60;
+    int sec =  (compareSec % 3600) % 60;
+
+    System.out.printf(String.format("%s:%s:%s", addZero(hour), addZero(min), addZero(sec)));
+
   }
+  public static  String addZero(int target) {
+    if (target < 10) return "0" + target;
+    return String.valueOf(target);
+  }
+
+//  public static void main(String[] args) {
+//    Scanner scanner = new Scanner(System.in);
+//    String nowTimeInput = scanner.next();
+//    String dropTimeInput = scanner.next();
+//    String[] nowTimeArr = nowTimeInput.split(":");
+//    String[] dropTimeArr = dropTimeInput.split(":");
+//    int nowHour = Integer.parseInt(nowTimeArr[0]);
+//    int nowMin = Integer.parseInt(nowTimeArr[1]);
+//    int nowSec = Integer.parseInt(nowTimeArr[2]);
+//    int nowAmountSec = nowHour * 3600 + nowMin * 60 + nowSec;
+//    int dropHour = Integer.parseInt(dropTimeArr[0]);
+//    int dropMin = Integer.parseInt(dropTimeArr[1]);
+//    int dropSec = Integer.parseInt(dropTimeArr[2]);
+//
+//    int dropAmountSec = dropHour * 3600 + dropMin * 60 + dropSec;
+//    int compareAmountSec = dropAmountSec - nowAmountSec;
+//    //어렵다
+//    if (compareAmountSec <= 0) {
+//      compareAmountSec += 24 * 3600;
+//    }
+//
+//    int outputHour = compareAmountSec / 3600;
+//    int outputMin = (compareAmountSec % 3600) / 60;
+//    int outputSec = compareAmountSec % 60;
+//
+//    //smart 출력 법
+//    String output = String.format("%02d:%02d:%02d", outputHour, outputMin, outputSec);
+//    System.out.println(output);
+//  }
 
   private String setOutput(int hour, int min, int sec) {
     String output = "";
