@@ -1,0 +1,11 @@
+
+2
+java:S1643("Use a StringBuilder instead.(§¡øé
+2
+java:S1643*"Use a StringBuilder instead.(ˆÍãÌ
+V	java:S125"<This block of commented-out lines of code should be removed.(»•ûÿÿÿÿ
+V	java:S125 "<This block of commented-out lines of code should be removed.(ÏëÈÜüÿÿÿÿ
+Q	java:S125""<This block of commented-out lines of code should be removed.(£´ á
+V	java:S125'"<This block of commented-out lines of code should be removed.(İ’ğ¯şÿÿÿÿ
+@	java:S106+"+Replace this use of System.out by a logger.(¢àóÄ
+Q	java:S125*"<This block of commented-out lines of code should be removed.(ˆÍãÌ
