@@ -1,6 +1,5 @@
 package org.example.chapter4;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class BaseConversionTwo {
@@ -21,11 +20,7 @@ public class BaseConversionTwo {
     for (int idx = resultArray.length-1; idx >= 0; idx--) {
       sortResult.append(resultArray[idx]);
     }
-//    Arrays.sort(resultArray);
-//    StringBuilder sortResult = new StringBuilder();
-//    for (int idx =0; idx < resultArray.length; idx++) {
-//      sortResult.append(resultArray[idx]);
-//    }
+
     return sortResult.toString();
   }
   static String toTargetFormation(int number, int targetNumber) {//target number  B 진법
