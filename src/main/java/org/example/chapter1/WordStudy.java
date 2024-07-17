@@ -36,6 +36,7 @@ public class WordStudy {
 
   //알파뱃 갯수와 최대값 구하기
   public static void main(String[] args) {
+    //회사 깃 테스트
     Scanner scanner = new Scanner(System.in);
     String input = scanner.next().toUpperCase();
     int[] inputArr = getAlphabetCnt(input);
