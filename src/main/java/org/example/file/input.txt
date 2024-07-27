@@ -1,10 +1,10 @@
 9
-Carol enter
-Alice enter
-Dave enter
-Carol leave
-Erin enter
-Erin leave
-Bob enter
-Carol enter
-Bob leave
+1 4
+3 5
+4 7
+7 11
+9 11
+9 9
+8 9
+9 9
+8 12
